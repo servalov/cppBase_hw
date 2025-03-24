@@ -1,26 +1,26 @@
-//  ООП. Абстракция и инкапсуляция. Задание 1. Адреса
+п»ї//  РћРћРџ. РђР±СЃС‚СЂР°РєС†РёСЏ Рё РёРЅРєР°РїСЃСѓР»СЏС†РёСЏ. Р—Р°РґР°РЅРёРµ 1. РђРґСЂРµСЃР°
 #include <iostream>
 #include <fstream>
 #include <windows.h>
 
-// Объявление класса Address
+// РћР±СЉСЏРІР»РµРЅРёРµ РєР»Р°СЃСЃР° Address
 class Address
 {
 	private:
-		std::string town{};          // название города
-		std::string street{};        // название улицы
-		std::string home{};          // номер дома
-		std::string flat{};          // номер квартиры
+		std::string town{};          // РЅР°Р·РІР°РЅРёРµ РіРѕСЂРѕРґР°
+		std::string street{};        // РЅР°Р·РІР°РЅРёРµ СѓР»РёС†С‹
+		std::string home{};          // РЅРѕРјРµСЂ РґРѕРјР°
+		std::string flat{};          // РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹
 
 	public:
 	
-		// Конструктор с параметрами
+		// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 		Address(std::string setTown, std::string setStreet, std::string setHome, std::string setFlat) : town{ setTown }, street{ setStreet }, home{ setHome }, flat{ setFlat }
 		{};
-		// Конструктор без параметров
+		// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 		Address() {};
 
-		// Метод на вывод строки данных
+		// РњРµС‚РѕРґ РЅР° РІС‹РІРѕРґ СЃС‚СЂРѕРєРё РґР°РЅРЅС‹С…
 		std::string get_output_address()
 		{
 			return town + ", " + street + ", " + home + ", " + flat;
@@ -36,22 +36,22 @@ int main()
 	std::string home{};
 	std::string flat{};
 	std::ifstream fin{"in.txt"};
-	if (fin.is_open())                       // открытие файла на чтение
+	if (fin.is_open())                       // РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РЅР° С‡С‚РµРЅРёРµ
 	{
 		if (fin >> num)
 		{
-			Address* a = new Address[num];   // динамический массив для хранения адресов (тут потребовался конструктор по умолчанию)
+			Address* a = new Address[num];   // РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Р°РґСЂРµСЃРѕРІ (С‚СѓС‚ РїРѕС‚СЂРµР±РѕРІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ)
 			for (int i = {}; i < num; ++i)
 			{
 				fin >> town;
 				fin >> street;
 				fin >> home;
 				fin >> flat;
-				a[i] = Address{ town ,street ,home ,flat };    //  тут вышло с перезаписью объекта
+				a[i] = Address{ town ,street ,home ,flat };    //  С‚СѓС‚ РІС‹С€Р»Рѕ СЃ РїРµСЂРµР·Р°РїРёСЃСЊСЋ РѕР±СЉРµРєС‚Р°
 			}
 
 			std::ofstream fout{ "out.txt" };
-			if (fout.is_open())             // открытие файла на запись
+			if (fout.is_open())             // РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РЅР° Р·Р°РїРёСЃСЊ
 			{
 				fout << num << std::endl;
 				for (int i = {}; i < num; ++i)
@@ -59,19 +59,19 @@ int main()
 			}
 			else
 			{
-				std::cout << " Ошибка открытия файла out.txt !!!" << std::endl;
+				std::cout << " РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р° out.txt !!!" << std::endl;
 			}
 			fout.close();
-			delete[] a;                    // освобождение памяти
+			delete[] a;                    // РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё
 		}
 		else
 		{
-			std::cout << " Ошибка данных файла in.txt !!!" << std::endl;
+			std::cout << " РћС€РёР±РєР° РґР°РЅРЅС‹С… С„Р°Р№Р»Р° in.txt !!!" << std::endl;
 		}
 	}
 	else
 	{
-		std::cout << " Ошибка открытия файла in.txt !!!" << std::endl;
+		std::cout << " РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р° in.txt !!!" << std::endl;
 	}
 	fin.close();
 
