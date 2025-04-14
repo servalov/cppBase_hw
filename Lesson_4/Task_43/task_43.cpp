@@ -128,7 +128,8 @@ public:
 	// Переопределенный метод для проверки условий на прямоугольный треугольник
 	bool check() override
 	{
-		return (abs(C - 90.0) < eps) ? Triangle::check() : false;
+		return Triangle::check() ? ((abs(C - 90.0) < eps) ? true : false) : false;
+		//return (abs(C - 90.0) < eps) ? Triangle::check() : false;
 	}
 };
 
@@ -146,7 +147,8 @@ public:
 	// Переопределенный метод для проверки условий на равнобедренный треугольник
 	bool check() override
 	{
-		return ((abs(a - c) < eps) && (abs(A - C) < eps)) ? Triangle::check() : false;
+		return Triangle::check() ? (((abs(a - c) < eps) && (abs(A - C) < eps)) ? true : false) : false;
+		//return ((abs(a - c) < eps) && (abs(A - C) < eps)) ? Triangle::check() : false;
 	}
 };
 
@@ -164,7 +166,8 @@ public:
 	// Переопределенный метод для проверки условий на равносторонний треугольник
 	bool check() override
 	{
-		return ((abs(a - b) < eps) && (abs(b - c) < eps) && (abs(A - 60.0) < eps) && (abs(B - 60.0) < eps) && (abs(C - 60.0) < eps)) ? Triangle::check() : false;
+		return Triangle::check() ? (((abs(a - b) < eps) && (abs(b - c) < eps) && (abs(A - 60.0) < eps) && (abs(B - 60.0) < eps) && (abs(C - 60.0) < eps)) ? true : false) : false;
+		//return ((abs(a - b) < eps) && (abs(b - c) < eps) && (abs(A - 60.0) < eps) && (abs(B - 60.0) < eps) && (abs(C - 60.0) < eps)) ? Triangle::check() : false;
 	}
 };
 
@@ -253,7 +256,8 @@ public:
 	// Переопределенный метод для проверки условий на параллелограмм
 	bool check() override
 	{
-		return ((abs(a - c) < eps) && (abs(b - d) < eps) && (abs(A - C) < eps) && (abs(B - D) < eps)) ? Quardrangle::check() : false;
+		return Quardrangle::check() ? (((abs(a - c) < eps) && (abs(b - d) < eps) && (abs(A - C) < eps) && (abs(B - D) < eps)) ? true : false) : false;
+		//return ((abs(a - c) < eps) && (abs(b - d) < eps) && (abs(A - C) < eps) && (abs(B - D) < eps)) ? Quardrangle::check() : false;
 	}
 };
 
@@ -271,7 +275,8 @@ public:
 	// Переопределенный метод для проверки условий на прямоугольник
 	bool check() override
 	{
-		return ((abs(A - 90.0) < eps) && (abs(B - 90.0) < eps)) ? Parallelogram::check() : false;
+		return Parallelogram::check() ? (((abs(A - 90.0) < eps) && (abs(B - 90.0) < eps)) ? true : false) : false;
+		//return ((abs(A - 90.0) < eps) && (abs(B - 90.0) < eps)) ? Parallelogram::check() : false;
 	}
 };
 
@@ -289,7 +294,8 @@ public:
 	// Переопределенный метод для проверки условий на ромб
 	bool check() override
 	{
-		return (abs(a - b) < eps) ? Parallelogram::check() : false;
+		return Parallelogram::check() ? ((abs(a - b) < eps) ? true : false) : false;
+		//return (abs(a - b) < eps) ? Parallelogram::check() : false;
 	}
 };
 
@@ -307,7 +313,8 @@ public:
 	// Переопределенный метод для проверки условий на квадрат
 	bool check() override
 	{
-		return (abs(a - b) < eps) ? Parallelogram::check() : false;
+		return Parallelogram::check() ? ((abs(a - b) < eps) ? true : false) : false;
+		//return (abs(a - b) < eps) ? Parallelogram::check() : false;
 	}
 };
 

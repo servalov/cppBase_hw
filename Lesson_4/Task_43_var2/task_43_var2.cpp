@@ -123,7 +123,8 @@ public:
 	// Переопределенный метод для проверки условий на прямоугольный треугольник
 	bool check() override
 	{
-		return (abs(get_C() - 90.0) < eps) ? Triangle::check() : false;
+		return Triangle::check() ? ((abs(get_C() - 90.0) < eps) ? true : false) : false;
+		//return (abs(get_C() - 90.0) < eps) ? Triangle::check() : false;
 	}
 };
 
@@ -138,7 +139,8 @@ public:
 	// Переопределенный метод для проверки условий на равнобедренный треугольник
 	bool check() override
 	{
-		return ((abs(get_a() - get_c()) < eps) && (abs(get_A() - get_C()) < eps)) ? Triangle::check() : false;
+		return Triangle::check() ? (((abs(get_a() - get_c()) < eps) && (abs(get_A() - get_C()) < eps)) ? true : false) : false;
+		//return ((abs(get_a() - get_c()) < eps) && (abs(get_A() - get_C()) < eps)) ? Triangle::check() : false;
 	}
 };
 
@@ -153,7 +155,8 @@ public:
 	// Переопределенный метод для проверки условий на равносторонний треугольник
 	bool check() override
 	{
-		return ((abs(get_a() - get_b()) < eps) && (abs(get_b() - get_c()) < eps) && (abs(get_A() - 60.0) < eps) && (abs(get_B() - 60.0) < eps) && (abs(get_C() - 60.0) < eps)) ? Triangle::check() : false;
+		return Triangle::check() ? (((abs(get_a() - get_b()) < eps) && (abs(get_b() - get_c()) < eps) && (abs(get_A() - 60.0) < eps) && (abs(get_B() - 60.0) < eps) && (abs(get_C() - 60.0) < eps)) ? true : false) : false;
+		//return ((abs(get_a() - get_b()) < eps) && (abs(get_b() - get_c()) < eps) && (abs(get_A() - 60.0) < eps) && (abs(get_B() - 60.0) < eps) && (abs(get_C() - 60.0) < eps)) ? Triangle::check() : false;
 	}
 };
 
@@ -237,7 +240,8 @@ public:
 	// Переопределенный метод для проверки условий на параллелограмм
 	bool check() override
 	{
-		return ((abs(get_a() - get_c()) < eps) && (abs(get_b() - get_d()) < eps) && (abs(get_A() - get_C()) < eps) && (abs(get_B() - get_D()) < eps)) ? Quardrangle::check() : false;
+		return Quardrangle::check() ? (((abs(get_a() - get_c()) < eps) && (abs(get_b() - get_d()) < eps) && (abs(get_A() - get_C()) < eps) && (abs(get_B() - get_D()) < eps)) ? true : false) : false;
+		//return ((abs(get_a() - get_c()) < eps) && (abs(get_b() - get_d()) < eps) && (abs(get_A() - get_C()) < eps) && (abs(get_B() - get_D()) < eps)) ? Quardrangle::check() : false;
 	}
 };
 
@@ -251,7 +255,8 @@ public:
 	// Переопределенный метод для проверки условий на прямоугольник
 	bool check() override
 	{
-		return ((abs(get_A() - 90.0) < eps) && (abs(get_B() - 90.0) < eps)) ? Parallelogram::check() : false;
+		return Parallelogram::check() ? (((abs(get_A() - 90.0) < eps) && (abs(get_B() - 90.0) < eps)) ? true : false) : false;
+		//return ((abs(get_A() - 90.0) < eps) && (abs(get_B() - 90.0) < eps)) ? Parallelogram::check() : false;
 	}
 };
 
@@ -265,7 +270,8 @@ public:
 	// Переопределенный метод для проверки условий на ромб
 	bool check() override
 	{
-		return (abs(get_a() - get_b()) < eps) ? Parallelogram::check() : false;
+		return Parallelogram::check() ? ((abs(get_a() - get_b()) < eps) ? true : false) : false;
+		//return (abs(get_a() - get_b()) < eps) ? Parallelogram::check() : false;
 	}
 };
 
@@ -279,7 +285,8 @@ public:
 	// Переопределенный метод для проверки условий на квадрат
 	bool check() override
 	{
-		return (abs(get_a() - get_b()) < eps) ? Parallelogram::check() : false;
+		return Parallelogram::check() ? ((abs(get_a() - get_b()) < eps) ? true : false) : false;
+		//return (abs(get_a() - get_b()) < eps) ? Parallelogram::check() : false;
 	}
 };
 
