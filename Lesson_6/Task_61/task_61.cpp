@@ -7,6 +7,12 @@
 // Проверка определена ли константа MODE
 #ifndef MODE
 #error Необходимо определить MODE !!!
+#elif MODE==1
+	// Функция для сложения двух чисел
+	double add(double a, double b)
+	{
+	return a + b;
+	}
 #endif
 
 double add(double a, double b);   // Функция для сложения двух чисел
@@ -30,10 +36,4 @@ int main()
 	#endif
 	
 	return EXIT_SUCCESS;
-}
-
-// Функция для сложения двух чисел
-double add(double a, double b)
-{
-	return a + b;
 }
