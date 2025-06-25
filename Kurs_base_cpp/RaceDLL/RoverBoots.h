@@ -8,8 +8,8 @@
 class RaceDLL_API RoverBoots : public Ground
 {
 	public:
-		RoverBoots(int dist);       // Конструктор c параметром distance
-		~RoverBoots();              // Деструктор 
+		RoverBoots();       // Конструктор 
+		~RoverBoots();      // Деструктор 
 };
 
 #endif // !ROVERBOOTS_H

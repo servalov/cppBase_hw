@@ -8,7 +8,7 @@ Ground::Ground()
 }
 
 // метод определения времени прохождения гонки для наземного транспорта
-void Ground::calcRaceTime()
+void Ground::calcRaceTime(double distance)
 {
 	double result = distance / speed ;
 	int restCount{ static_cast<int>(result / drivingTime) };

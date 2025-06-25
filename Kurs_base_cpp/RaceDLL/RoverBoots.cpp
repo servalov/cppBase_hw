@@ -2,19 +2,18 @@
 #include "RoverBoots.h"
 
 // Конструктор c параметром distance
-RoverBoots::RoverBoots(int dist)
+RoverBoots::RoverBoots()
 {
 	// Характеристики ТС - Ботинки-вездеходы
-	name = "Ботинки-вездеходы";
+	name = new char[40] {"Ботинки-вездеходы"};
 	speed = 6;
 	drivingTime = 60;
 	numRestTimes = 2;
 	restTime = new double[numRestTimes] {10, 5};
-	distance = dist;
 }
 
 // Деструктор 
 RoverBoots::~RoverBoots()
 {
-
+	delete[] name;
 }

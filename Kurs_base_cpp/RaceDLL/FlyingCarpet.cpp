@@ -2,17 +2,15 @@
 #include "FlyingCarpet.h"
 
 // Конструктор c параметром distance
-FlyingCarpet::FlyingCarpet(int dist)
+FlyingCarpet::FlyingCarpet()
 {
 	// Характеристики ТС - Ковер-самолет 
-	name = "Ковер-самолет";
+	name = new char[40] {"Ковер-самолет"};
 	speed = 10;
-	distance = dist;
-	coefRaceDist = calcCoefDist(distance);
 }
 
 // метод определения коэффициента сокращения расстояния
-double FlyingCarpet::calcCoefDist(int dist)
+double FlyingCarpet::calcCoefDist(double dist)
 {
 	int coefMas[] = {0,3,10,5};
 	int distMas[] = { 1000,5000,10000 };
@@ -35,4 +33,9 @@ double FlyingCarpet::calcCoefDist(int dist)
 		coef = coefMas[3];
 	}
 	return static_cast<double>(1-coef/100);
+}
+
+FlyingCarpet::~FlyingCarpet()
+{
+	delete[] name;
 }

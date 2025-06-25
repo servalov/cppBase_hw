@@ -8,8 +8,8 @@
 class RaceDLL_API Camel : public Ground
 {
 	public:
-		Camel(int dist);      // Конструктор c параметром distance
-		~Camel();                // Деструктор  
+		Camel();      // Конструктор
+		~Camel();     // Деструктор  
 };
 
 #endif // !CAMEL_H

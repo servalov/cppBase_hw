@@ -8,8 +8,9 @@
 class RaceDLL_API FlyingCarpet : public Air
 {
 	public:
-		FlyingCarpet(int dist);                       // Конструктор c параметром distance
-		double calcCoefDist(int dist) override;       // метод определения коэффициента сокращения расстояния
+		FlyingCarpet();                               // Конструктор
+		double calcCoefDist(double dist) override;       // метод определения коэффициента сокращения расстояния
+		~FlyingCarpet();							  // Деструктор	
 };
 
 #endif // !FLYINGCARPET_H

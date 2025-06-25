@@ -8,7 +8,9 @@
 class RaceDLL_API Broom : public Air
 {
 public:
-	  Broom(int dist);          // Конструктор c параметром distance
+	  Broom();										// Конструктор
+	  double calcCoefDist(double dist) override;		// метод определения коэффициента сокращения расстояния
+	  ~Broom();										// Деструктор 
 };
 
 #endif // !BROOM_H

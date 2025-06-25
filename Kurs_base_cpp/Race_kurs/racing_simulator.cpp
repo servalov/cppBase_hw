@@ -35,7 +35,7 @@ int main()
 		int distance{};
 		int transportTypeNum{};
 		int countTransportRace{};
-		Transport* tr[numTransport];
+		Transport* tr[numTransport]{};
 		
 		system("cls");
 		if (firstRace==0)
@@ -98,6 +98,10 @@ int main()
 				for (int i{}; i < countTransportRace; ++i)
 				{
 					std::cout << tr[i]->getName() << " ";
+					if (i<countTransportRace - 1)
+					{
+						std::cout << ", ";
+					}
 				}
 				std::cout << std::endl;
 
@@ -134,6 +138,10 @@ int main()
 						for (int i{}; i < countTransportRace; ++i)
 						{
 							std::cout << tr[i]->getName() << " ";
+							if (i < countTransportRace - 1)
+							{
+								std::cout << ", ";
+							}
 						}
 						std::cout<<std::endl;
 					}
@@ -168,36 +176,36 @@ int main()
 							switch (transportTypeNum)
 							{
 							case static_cast<int>(transportList::RoverBoots):		
-								tr[countTransportRace] = new RoverBoots(distance);
+								tr[countTransportRace] = new RoverBoots;
 								break;
 
 							case static_cast<int>(transportList::Broom):
-								tr[countTransportRace] = new Broom(distance);
+								tr[countTransportRace] = new Broom;
 								break;
 
 							case static_cast<int>(transportList::Camel):
-								tr[countTransportRace] = new Camel(distance);
+								tr[countTransportRace] = new Camel;
 								break;
 
 							case static_cast<int>(transportList::Centaur):
-								tr[countTransportRace] = new Centaur(distance);
+								tr[countTransportRace] = new Centaur;
 								break;
 
 							case static_cast<int>(transportList::Eagle):
-								tr[countTransportRace] = new Eagle(distance);
+								tr[countTransportRace] = new Eagle;
 								break;
 
 							case static_cast<int>(transportList::CamelFast):
-								tr[countTransportRace] = new CamelFast (distance);
+								tr[countTransportRace] = new CamelFast;
 								break;
 
 							case static_cast<int>(transportList::FlyingCarpet):
-								tr[countTransportRace] = new FlyingCarpet(distance);
+								tr[countTransportRace] = new FlyingCarpet;
 								break;
 							}
 
 							// Определяем время прохождения дистанции (вызов переопределенного метода производного класса)
-							tr[countTransportRace]->calcRaceTime();
+							tr[countTransportRace]->calcRaceTime(distance);
 							
 							std::cout <<"\n"<<tr[countTransportRace]->getName() << " успешно зарегистрирован!";
 							++countTransportRace;

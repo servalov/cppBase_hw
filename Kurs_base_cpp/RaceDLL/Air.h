@@ -12,8 +12,8 @@ class RaceDLL_API Air : public Transport
 	
 	public:
 		Air();                                     // Конструктор без параметров
-		virtual double calcCoefDist(int dist);     // метод определения коэффициента сокращения расстояния
-		void calcRaceTime() override;              // метод определения времени прохождения гонки для воздушного транспорта
+		virtual double calcCoefDist(double dist);     // метод определения коэффициента сокращения расстояния
+		void calcRaceTime(double distance) override;              // метод определения времени прохождения гонки для воздушного транспорта
 };
 
 #endif // !AIR_H

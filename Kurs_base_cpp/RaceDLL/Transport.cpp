@@ -8,13 +8,14 @@ Transport::Transport()
 }
 
 // метод получения наименования транспорта 
-std::string Transport::getName()
+//std::string Transport::getName()
+char* Transport::getName()
 {
 	return name;
 }
 
 // метод определения времени прохождения гонки
-void Transport::calcRaceTime()
+void Transport::calcRaceTime(double distance)
 {
 
 }
@@ -24,4 +25,11 @@ double Transport::getResult()
 {
 	return resultTime;
 }
+
+
+Transport::~Transport()
+{
+
+}
+
 

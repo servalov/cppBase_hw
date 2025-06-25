@@ -14,7 +14,7 @@ class RaceDLL_API Ground : public Transport
 
 	public:
 		Ground();  // Конструктор без параметров
-		void calcRaceTime() override;              // метод определения времени прохождения гонки для наземного транспорта
+		void calcRaceTime(double distance) override;              // метод определения времени прохождения гонки для наземного транспорта
 };
 
 #endif // !GROUND_H

@@ -2,11 +2,21 @@
 #include "Broom.h"
 
  // Конструктор c параметром distance
-Broom::Broom(int dist)
+Broom::Broom()
 {
 	// Характеристики ТС - Метла 
-	name = "Метла";
+	name = new char[40]{"Метла"};
 	speed = 20;
-	distance = dist;
-	coefRaceDist = 1-static_cast<double>(dist/1000)/100;
+}
+
+Broom::~Broom()
+{
+	delete[] name;
+
+}
+
+// метод определения коэффициента сокращения расстояния
+double Broom::calcCoefDist(double dist)
+{
+	return 1 - static_cast<double>((dist / 1000) / 100);
 }

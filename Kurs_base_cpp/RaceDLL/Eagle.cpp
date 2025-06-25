@@ -2,12 +2,21 @@
 #include "Eagle.h"
 
 // Конструктор c параметром distance
-Eagle::Eagle(int dist)
+Eagle::Eagle()
 {
 	// Характеристики ТС - Орел 
-	name = "Орел";
+	name = new char[40]{"Орел"};
 	speed = 8;
-	distance = dist;
-	coefRaceDist = 0.94;
+}
+
+Eagle::~Eagle()
+{
+	delete[] name;
+
+}
+
+double Eagle::calcCoefDist(double dist)
+{
+	return 0.94;
 }
       

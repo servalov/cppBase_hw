@@ -8,8 +8,8 @@
 class RaceDLL_API Centaur : public Ground
 {
 	public:
-		Centaur(int dist);           // Конструктор c параметром distance
-		~Centaur();                  // Деструктор 
+		Centaur();           // Конструктор
+		~Centaur();          // Деструктор 
 };
 
 #endif // !CENTAUR_H

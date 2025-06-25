@@ -2,19 +2,20 @@
 #include "Camel.h"
 
 // Конструктор c параметром distance
-Camel::Camel(int dist)
+Camel::Camel()
 {
 	// Характеристики ТС - Верблюд
-	name = "Верблюд";
+	name = new char[40]{"Верблюд"};
 	speed = 10;
 	drivingTime = 30;
 	numRestTimes = 2;
 	restTime = new double[numRestTimes] {5, 8};
-	distance = dist;
 }
 
 // Деструктор для удаления памяти, отведенной под динамический массив
 Camel:: ~Camel()
 {
 	delete[] restTime;
+	delete[] name;
+
 }

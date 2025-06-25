@@ -8,7 +8,9 @@
 class RaceDLL_API Eagle : public Air
 {
 public:
-	Eagle(int dist);                              // Конструктор c параметром distance
+	Eagle();                                     // Конструктор
+	double calcCoefDist(double dist) override;		 // метод определения коэффициента сокращения расстояния
+	~Eagle();
 };
 
 #endif // !EAGLE_H
